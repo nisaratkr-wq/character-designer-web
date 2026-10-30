@@ -1,0 +1,149 @@
+/* พื้นหลัง */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/picture/main3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* overlay */
+.register-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* กล่องสมัคร */
+.register-card {
+  position: relative;
+  z-index: 1;
+
+  width: 450px;
+
+  padding: 45px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+  text-align: center;
+}
+
+/* หัวข้อ */
+.register-card h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* ฟอร์ม */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* label */
+.register-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: -10px;
+}
+
+/* input */
+.register-form input {
+  padding: 15px;
+
+  border-radius: 16px;
+  border: 1px solid #ddd;
+
+  font-size: 16px;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+/* focus */
+.register-form input:focus {
+  border-color: #7c5cff;
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.15);
+}
+
+/* ปุ่มสมัคร */
+.register-form button {
+  margin-top: 10px;
+
+  padding: 15px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    to right,
+    #5b7cff,
+    #8b5cf6
+  );
+
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover */
+.register-form button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* ข้อความ login */
+.login-text {
+  margin-top: 25px;
+  color: #444;
+}
+
+.login-text a {
+  color: #6d5dfc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* ปุ่มกลับ */
+.back-btn {
+  background: none;
+  border: none;
+
+  color: #7c5cff;
+
+  cursor: pointer;
+
+  margin-bottom: 15px;
+
+  font-weight: bold;
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}

@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* ─── ลงทะเบียนธีมสีพิเศษของหน้า Character Designer ให้เรียกใช้ผ่าน Tailwind ได้ ─── */
+@theme {
+  --color-background: #15121b;
+  --color-surface-container-lowest: #0f0d15;
+}
+
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* ─── บังคับให้หน้าแรกใช้ธีมมืดตามแบบ Google Stitch ─── */
+body {
+  margin: 0;
+  background-color: #15121b;
+  color: #e7e0ed;
+}
+
+/* เอาการล็อกขนาดความกว้างแบบเก่า (width: 1126px) ออกจาก #root 
+   เพื่อไม่ให้บล็อกเลย์เอาต์ Flexbox / Grid ของ Navbar และการ์ดดีไซน์ใน Tailwind */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* สไตล์เพิ่มเติมสำหรับ Character Card ซูมตอน Hover */
+.character-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.character-card:hover {
+  transform: translateY(-4px);
+}
+
+h1, h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+}
+p { margin: 0; }
+code {
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+  border-radius: 4px;
+}

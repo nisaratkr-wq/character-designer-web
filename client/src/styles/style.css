@@ -1,0 +1,245 @@
+/* =========================
+   🔥 RESET (ตั้งค่าพื้นฐาน)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #0f1220; /* สีพื้นหลังเข้ม */
+  color: white;
+}
+
+/* =========================
+   🔝 NAVBAR (แถบบน)
+========================= */
+
+.navbar {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 60px;
+
+  background: linear-gradient(90deg, #a855f7, #9333ea);
+
+  /* 🔥 เพิ่ม */
+  position: relative;
+  z-index: 9999;
+}
+
+/*user */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info span {
+  color: white;
+  font-weight: bold;
+}
+
+.profile-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  position: relative;
+  z-index: 9999;
+}
+
+.profile-link:hover {
+  text-decoration: underline;
+}
+
+/* โลโก้ */
+/* ===== LOGO ===== */
+.logo-img {
+  height: 90px;   /* 🔥 ปรับขนาดตรงนี้ */
+  width: auto;    /* 🔥 รักษาสัดส่วน */
+}
+/* ปุ่มเมนู */
+.nav-menu button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-menu button:hover {
+  background: #ddd;
+}
+
+/* =========================
+   🧑 HERO SECTION (ส่วนบน)
+========================= */
+/* HERO เป็นตัวอ้างอิง */
+.hero {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* 🔥 รูปเป็น background */
+.hero-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 800px;   /* 🔥 ปรับขนาดได้ */
+  z-index: 1;     /* อยู่ข้างหลัง */
+}
+
+/* 🔥 ข้อความอยู่ด้านหน้า */
+/* ข้อความ */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  max-width: 600px; /* 🔥 กันบรรทัดยาวเกิน */
+}
+
+/* 🔥 แก้ฟอนต์ทับกัน */
+.hero-text h1 {
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.2;       /* 🔥 สำคัญมาก */
+  margin-bottom: 20px;
+}
+
+/* รองลงมา */
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;       /* 🔥 กันชน */
+  margin-bottom: 25px;
+}
+
+/* ปุ่ม */
+.start-btn {
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #a855f7, #9333ea);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ฝั่งรูป */
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* 🔥 ดันรูปไปขวา */
+}
+
+/* รูป */
+.hero-img img {
+  width: 100%;
+  max-width: 420px; /* 🔥 คุมขนาด */
+  height: auto;
+}
+
+/* =========================
+   ⭐ POPULAR SECTION
+========================= */
+.popular {
+  padding: 40px;
+  text-align: center;
+}
+
+.popular h2 {
+  margin-bottom: 30px;
+}
+
+.next-btn {
+  margin-bottom: 50px;  /* 🔥 เพิ่มช่องว่างใต้ปุ่ม */
+}
+/* =========================
+   🧩 GRID (4 ช่อง)
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 🔥 4 ช่องต่อแถว */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* =========================
+   🧱 CARD (กล่องรูป)
+========================= */
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 🔥 สี่เหลี่ยมจัตุรัส */
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  color: black;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* รูปในการ์ด */
+.card-img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+/* ข้อมูลด้านล่าง */
+.card-info {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* =========================
+   📱 RESPONSIVE (มือถือ)
+========================= */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 🔥 เหลือ 2 ช่อง */
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero-img {
+    justify-content: center; /* 🔥 จัดกลาง */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* 🔥 เหลือ 1 ช่อง */
+  }
+}
+
+
+

@@ -1,0 +1,184 @@
+/* ==========================================
+   สไตล์หน้า Login โดย Gemini (ชิดขวา พรีเมียมโมเดิร์น)
+   ========================================== */
+
+/* พื้นหลังหลัก - จัดให้เนื้อหาชิดขวาแบบมีมิติ */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end; /* ย้ายกล่องไปฝั่งขวา */
+  align-items: center;
+
+  background-image: url("/picture/main2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  padding-right: 10%; /* ปรับระยะห่างจากขอบขวาให้สมดุลและสง่างามขึ้น */
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Overlay ไล่เฉดสีนุ่มนวล สไตล์ Deep Tech เพื่อขับให้กล่องฝั่งขวาเด่นขึ้น */
+.login-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 23, 42, 0.15) 0%, 
+    rgba(15, 23, 42, 0.55) 100%
+  );
+}
+
+/* กล่อง Login ดีไซน์แบบ Glassmorphism ที่สะอาดและดูแพงขึ้น */
+.login-card {
+  position: relative;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.88); /* ปรับความสว่างสีขาวขึ้นเล็กน้อย */
+  backdrop-filter: blur(20px); /* เพิ่มความเบลอของพื้นหลังให้เนียนตาขึ้น */
+  -webkit-backdrop-filter: blur(20px);
+
+  padding: 55px 45px;
+  border-radius: 24px; /* โค้งมนกำลังดีสไตล์ Modern UI */
+  width: 100%;
+  max-width: 440px; 
+
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25); /* เงาสีกรมท่าเข้มช่วยให้ดูนุ่มลึกกว่าสีดำสนิท */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* เส้นขอบบางๆ เพิ่มความคมชัด */
+}
+
+/* หัวข้อ - ปรับฟอนต์ให้ดูหนักแน่น มีพลัง */
+.login-card h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #0f172a; /* เปลี่ยนเป็นสีกรมท่าเข้มสุดคลาสสิก */
+  letter-spacing: -0.5px;
+}
+
+/* ข้อความซับไตเติล */
+.login-card p {
+  margin-bottom: 35px;
+  color: #64748b; /* สีเทา Slate สบายตา */
+  font-size: 15px;
+}
+
+/* ฟอร์ม */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* เพิ่มระยะห่างให้หายใจสะดวกขึ้น */
+}
+
+/* label */
+.login-form label {
+  text-align: left;
+  font-weight: 600;
+  color: #334155;
+  font-size: 14px;
+  margin-bottom: -14px; /* ปรับตำแหน่งให้เข้าใกล้ Input */
+}
+
+/* input - ฟีลลิ่งการกรอกที่สมูทและสะอาดตา */
+.login-form input {
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1.5px solid #e2e8f0; /* ใช้เส้นขอบจางที่ดูสะอาด */
+  background: rgba(248, 250, 252, 0.8);
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* เอฟเฟกต์โฟกัส - เรืองแสง Indigo-Violet อ่อนๆ สไตล์ Gemini */
+.login-form input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12), 0 4px 12px rgba(99, 102, 241, 0.05);
+}
+
+/* ปุ่มกด - ไล่เฉดสีคราม-ม่วง (Indigo to Violet) อันเป็นเอกลักษณ์ */
+.login-form button {
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  margin-top: 8px;
+}
+
+/* hover ปุ่ม - เล่นระดับแสงเงาให้ดูปุ่มลอยขึ้นมา */
+.login-form button:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 22px rgba(79, 70, 229, 0.45);
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
+.login-form button:active {
+  transform: translateY(0.5px);
+}
+
+/* ปุ่มกลับ - เพิ่ม Micro-interaction เลื่อนซ้ายเบาๆ */
+.back-btn {
+  align-self: flex-start; /* จัดชิดซ้ายของกล่อง */
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-btn:hover {
+  color: #4f46e5;
+  text-decoration: none;
+  transform: translateX(-4px); /* เลื่อนไปทางซ้ายเบาๆ นุ่มๆ */
+}
+
+/* ลิงก์สมัครสมาชิก */
+.register-text {
+  margin-top: 30px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.register-text a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.register-text a:hover {
+  color: #3730a3;
+  text-decoration: underline;
+}
+
+/* รองรับหน้าจอมือถือ (Responsive) */
+@media (max-width: 1024px) {
+  .login-container {
+    justify-content: center; /* บนมือถือและแท็บเล็ตให้เด้งกลับมาตรงกลางเพื่อการใช้งานที่ง่าย */
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .login-card {
+    padding: 45px 30px;
+    background: rgba(255, 255, 255, 0.92); /* เพิ่มความทึบแสงบนมือถือเพื่อให้อ่านง่าย */
+  }
+}
